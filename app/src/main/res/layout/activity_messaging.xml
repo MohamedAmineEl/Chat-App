@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="4dp">
+
+        <Toolbar
+            android:id="@+id/Toolbarr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentInsetStart="8dp"
+            android:contentInsetEnd="16dp">
+
+            <ImageView
+                android:id="@+id/back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/transparent_ovral_bg"
+                android:clickable="true"
+                android:foreground="@drawable/click_effect"
+                android:padding="8dp"
+                app:srcCompat="@drawable/round_arrow_back_black_24dp"
+                app:tint="@color/main_color" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/user_profile_iv"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="15dp"
+                tools:src="@drawable/default_profile_pic" />
+
+            <TextView
+                android:id="@+id/user_name_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="end"
+                android:maxLines="1"
+                android:minHeight="?actionBarSize"
+                android:padding="16dp"
+                android:text="Mohamed Amine"
+                android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+                android:textColor="#1E1E1E"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:id="@+id/about_chat_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:clickable="true"
+                android:foreground="@drawable/click_effect"
+                android:padding="8dp"
+                app:srcCompat="@drawable/ic_about_chat_icon"
+                app:tint="@color/main_color" />
+        </Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/messages_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#FFF"
+            android:padding="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <EditText
+                android:id="@+id/message_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="false"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/message_txt_bg"
+                android:fontFamily="@font/roboto"
+                android:hint="Message..."
+                android:paddingStart="15dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:textColorHint="@color/gray_bold"
+                android:textCursorDrawable="@drawable/text_cursor_shape"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/send_btn"
+                app:layout_constraintHeight_max="150dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/send_btn"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/send_btn_bg"
+                android:foreground="@drawable/click_effect"
+                android:paddingStart="12dp"
+                android:paddingLeft="12dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="12dp"
+                android:src="@drawable/ic_send_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

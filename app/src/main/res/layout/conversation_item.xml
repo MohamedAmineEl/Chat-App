@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:paddingStart="16dp"
+    android:paddingLeft="16dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image_iv"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:src="@drawable/default_profile_pic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_toEndOf="@+id/profile_image_iv"
+        android:layout_toRightOf="@+id/profile_image_iv"
+        android:fontFamily="@font/roboto"
+        android:text="Mohamed Amine"
+        android:textColor="#292929"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/profile_image_iv"
+        app:layout_constraintTop_toTopOf="@+id/profile_image_iv"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name_tv"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/roboto"
+        android:maxLines="1"
+        android:text=" \u00B7 Feb 14, 2021"
+        android:textColor="#5C5C5C"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/last_message_tv"
+        app:layout_constraintEnd_toStartOf="@+id/message_state_iv"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/last_message_tv"
+        app:layout_constraintTop_toTopOf="@+id/last_message_tv" />
+
+    <TextView
+        android:id="@+id/last_message_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name_tv"
+        android:layout_alignParentTop="false"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/profile_image_iv"
+        android:layout_toRightOf="@+id/profile_image_iv"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto"
+        android:maxLines="1"
+        android:text="You: hi mohamed how are you i miss you"
+        android:textColor="#5C5C5C"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_image_iv"
+        app:layout_constraintEnd_toStartOf="@+id/date_tv"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/profile_image_iv"
+        app:layout_constraintStart_toStartOf="@+id/name_tv"
+        app:layout_constraintTop_toBottomOf="@+id/name_tv" />
+
+    <View
+        android:id="@+id/online_indicator_view"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_below="@+id/name_tv"
+        android:layout_marginBottom="2dp"
+        android:layout_toEndOf="@+id/profile_image_iv"
+        android:layout_toRightOf="@+id/profile_image_iv"
+        android:background="@drawable/online_img_bg"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_image_iv"
+        app:layout_constraintEnd_toEndOf="@+id/profile_image_iv"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/profile_image_iv"
+        app:layout_constraintTop_toTopOf="@+id/profile_image_iv"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/message_state_iv"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_unread_check" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
